@@ -6,16 +6,16 @@ for i in range(0,int(inputS[0])):
     list1[i] = str(i)
 
 def clearup(i):
-    if list1[int(i)][0]==i:
+    if (list1[int(i)])[0]==i:
         position = int(i)
     else :
-        position = int(list1[int(i)][0])
+        position = int(list1[int(i)])
     temp = list1[position].split(i)
     list1[position] = temp[0]
     for m in temp[1]: 
         list1[int(m)]=m
 def moveto(i,j):
-    if list1[int(i)][0]==i:
+    if (list1[int(i)])[0]==i:
         position = int(i)
     else :
         position = int(list1[int(i)])
@@ -24,14 +24,13 @@ def moveto(i,j):
     for m in temp[1]: 
         list1[int(m)]=j
     list1[int(i)]=j
-    if i != j:
-        list1[int(j)]+=i
+    list1[int(j)]+=i
     list1[int(j)]+=temp[1]
-
 def moveonto(i,j):
     clearup(i)
     clearup(j)
     list1[int(i)]=j
+    list1[int(j)]=j
     list1[int(j)]+=i
 def moveover(i,j) :
     clearup(i)   
@@ -39,6 +38,7 @@ def moveover(i,j) :
     list1[int(j)]+=i
 def pileonto(i,j): 
     clearup(j)
+    list1[int(j)]+=j
     moveto(i,j)
 def pileover(i,j):
     moveto(i,j)
