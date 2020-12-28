@@ -1,2 +1,2 @@
-for i in range(0,26):
- globals()['mylist'+str(i)]=[]
+list2 = ['awdawd','awdsd']
+print(list2[0][0])
