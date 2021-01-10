@@ -16,22 +16,22 @@ def trueposition(i):
 def clearup(i):
     position = trueposition(i)
 
-    temp = list1[position][list1[position].index(i)+1:]
+    temp = list1[position].index(i)
     list1[position] = list1[position][:list1[position].index(i)]
     
     for m in temp:
-        del list1[int(m)][:]
-        list1[int(m)].append[m]
+        list1[int(m)].remove(m)
+        list1[int(m)].extend([m])
         
 def moveto(i,j):
     positioni = trueposition(i)
     positionj = trueposition(j)
 
     temp = list1[positioni][:list1[positioni].index(i)-1]
-    list1[positionj].append(list1[positioni][list1[positioni].index(i):])
+    list1[positionj].extend(list1[positioni][list1[positioni].index(i):])
     for m in temp:
-        del list1[int(temp)][:]
-        list1[int(temp)].append(str(positionj))
+        list1[int(m)].remove(m)
+        list1[int(temp)].extend([str(positionj)])
     del list1[positioni][:]
     list1[positioni]=temp
 
@@ -41,25 +41,19 @@ def moveonto(i,j):
     
     positionj = trueposition(j)
     
-    del list1[int(i)][:]
-    list1[int(i)].append(j)
+    list1[int(i)].remove(i)
+    list1[int(i)].extend([j])
     
-    list1[positionj].append(i)
+    list1[positionj].extend([i])
 
 def moveover(i,j) :
     clearup(i)
-    if list1[int(i)][0]==i:
-        positioni = int(i)
-    else :
-        positioni = int(list1[int(i)][0])
         
-    if list1[int(j)][0] == j:
-        positionj = int(j)
-    else:
-        positionj = int(list1[int(j)][0])
-    list1[positioni].pop()
-    list1[int(i)][0]=j
-    list1[positionj].extende([i])
+    positionj = trueposition([j])
+    
+    list1[int(i)].remove(i)
+    list1[int(i)].extend([str(positionj)])
+    list1[positionj].extend([i])
 
 def pileonto(i,j):
     clearup(j)
