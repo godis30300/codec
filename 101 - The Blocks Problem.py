@@ -9,7 +9,14 @@ pile a over b： 把a及上方的區塊都疊到b所在區塊堆的上方。
 
 import re
 pat = re.compile(r'(\S{4}) (\d+) (\S{4}) (\d+)')
-inputS = input().split("\n")
+inputS = []
+while True:
+    temp = input()
+    inputS.append(temp)
+    if temp == "quit":
+        break
+
+
 list1 = []
 for i in range(int(inputS[0])):
     list1.append([i])
