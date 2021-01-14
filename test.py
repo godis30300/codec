@@ -4,3 +4,6 @@ print ("删除的项为 :", list_pop)
 print ("列表现在为 : ", list1)
 print(type(list_pop))
 type(list_pop)
+
+print(list1)
+print(list1[:1])
